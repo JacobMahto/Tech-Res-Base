@@ -519,7 +519,7 @@ public class reportCardE extends javax.swing.JFrame {
                             rmkL.setText("Nice Efforts! Can do much better.");
                         }
                         if (per >= disL) {
-                            divL.setText("FIRST[D]");
+                            divL.setText("FIRST");
                             rmkL.setText("Outstanding ! Keep it up.");
                         }
 
@@ -602,7 +602,8 @@ public class reportCardE extends javax.swing.JFrame {
                 try {
                     i = 0;
                     enterMarks ob = new enterMarks();
-                    ob.stdCB.setSelectedIndex(stdCB.getSelectedIndex());
+                    ob.sessionCB.setSelectedItem(sessionCB.getSelectedItem());
+                    ob.stdCB.setSelectedItem(stdCB.getSelectedItem());
                     //srL = listLB1.getSelectedIndices();
                     ob.srCB.setSelectedIndex(curSr);
                     tabl = (DefaultTableModel) ob.table.getModel();
@@ -842,7 +843,7 @@ public class reportCardE extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Trajan", 1, 28)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("m . k . public school");
+        jTextField1.setText("m . k . public sr. sec. school");
         jTextField1.setBorder(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/mone.jpg"))); // NOI18N
@@ -1539,7 +1540,7 @@ public class reportCardE extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
 
         pack();

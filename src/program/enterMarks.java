@@ -154,6 +154,7 @@ public int mute=0;
 
         sessionCB.setFont(new java.awt.Font("Adobe Hebrew", 0, 18)); // NOI18N
         sessionCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024" }));
+        sessionCB.setSelectedIndex(1);
         sessionCB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 sessionCBFocusLost(evt);
