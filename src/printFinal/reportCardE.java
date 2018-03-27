@@ -21,6 +21,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -200,8 +201,10 @@ public class reportCardE extends javax.swing.JFrame {
             System.out.println("I JACOB IS" + i + "---count row=" + countRow);
             int sumInRow = 0, sumInRowPartial = 0;
             for (int j = 2; j <= (examLimit + 1); j++) {
-//if(j==4){continue;}        //since third term is not wanted        
+//if(j==4){continue;}        //since third term is not wanted  
+               
                 String val = t.getValueAt(i, j).toString();
+                System.out.println("TTTTTTTTTTTTTT");
                 int value = Integer.parseInt(val);
                 if (value == (-100)) {
                     opSub[tempRowAssignForOpSub] = (t.getValueAt(i, 1)).toString();//adding name of opSub to array
@@ -603,9 +606,12 @@ public class reportCardE extends javax.swing.JFrame {
                     i = 0;
                     enterMarks ob = new enterMarks();
                     ob.sessionCB.setSelectedItem(sessionCB.getSelectedItem());
-                    ob.stdCB.setSelectedItem(stdCB.getSelectedItem());
+                    
+                    ob.stdCB.setSelectedItem(stdCB.getSelectedItem());                    
                     //srL = listLB1.getSelectedIndices();
+                    System.out.println("curSR = "+curSr);
                     ob.srCB.setSelectedIndex(curSr);
+                    System.out.println("sec2");
                     tabl = (DefaultTableModel) ob.table.getModel();
 
                     opSubTotal = new int[opSub.length];
@@ -831,7 +837,7 @@ public class reportCardE extends javax.swing.JFrame {
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField7.setText("Contact : 0141 - 2341265");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tech-Res Marksheet Print");
         setResizable(false);
 
@@ -1555,7 +1561,7 @@ public class reportCardE extends javax.swing.JFrame {
             Statement stmt = con.createStatement();
             String query1 = "CREATE DATABASE IF NOT EXISTS rsl;";
             String query2 = "USE rsl;";
-            String query3 = "SELECT sr,name FROM studentInfo WHERE class='" + std + "' ;";
+            String query3 = "SELECT sr,name FROM studentInfo WHERE class='"+std+"' and session='"+sessionCB.getSelectedItem() +"';";
 
             stmt.execute(query1);
             stmt.execute(query2);
@@ -1628,7 +1634,6 @@ public class reportCardE extends javax.swing.JFrame {
             Class.forName("java.sql.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost", "root", "lion");
             Statement stmt = con.createStatement();
-
             String query0 = "CREATE DATABASE IF NOT EXISTS rsl;";
             stmt.execute(query0);
             String query1 = "USE rsl;";
@@ -1666,6 +1671,7 @@ public class reportCardE extends javax.swing.JFrame {
         }
 
         srL = listLB1.getSelectedIndices();
+        System.out.println("SELECT ARRAY : "+Arrays.toString(srL));
         //  int countSelectedStud= srL.length;  
         // countSelectedStud=1;
 
@@ -1681,7 +1687,8 @@ public class reportCardE extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jacobVictory = 1;
         srL = listLB1.getSelectedIndices();
-        System.out.println("PREVIEW");
+        
+        System.out.println("PREVIEW"+Arrays.toString(srL));
 
         printSimpRepE.jac();
 
