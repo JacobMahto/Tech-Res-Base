@@ -849,7 +849,7 @@ public class reportCardE extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Trajan", 1, 28)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("m . k . public sr. sec. school");
+        jTextField1.setText("m. k. public sr. sec. school");
         jTextField1.setBorder(null);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/mone.jpg"))); // NOI18N
@@ -871,7 +871,7 @@ public class reportCardE extends javax.swing.JFrame {
 
         sessTF.setFont(new java.awt.Font("Californian FB", 1, 18)); // NOI18N
         sessTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sessTF.setText("Annual Examination : 2016-17");
+        sessTF.setText("Annual Examination : 2017-18");
         sessTF.setBorder(null);
 
         jPanel5.setBackground(new java.awt.Color(0, 0, 0));
@@ -1665,6 +1665,7 @@ public class reportCardE extends javax.swing.JFrame {
             secondL = rs.getDouble("y");
             firstL = rs.getDouble("a");
             disL = rs.getDouble("b");
+            System.out.println("third"+thirdL+"--second="+secondL+"--firstL"+firstL+"dist="+disL);
 
         } catch (Exception E) {
             JOptionPane.showMessageDialog(null, "Problem Sychronising scale data !");
